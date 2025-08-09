@@ -147,8 +147,8 @@ size = Vector2(56, 51)
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_sq38a")
 speed = 20000.0
-gravity = 1000.0
-jump_force = 1000.0
+gravity = 750.0
+jump_force = 500.0
 camera = NodePath("")
 metadata/_edit_group_ = true
 

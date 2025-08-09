@@ -10,6 +10,11 @@ func update(_delta):
 func physics_update(delta):
 	if player.is_on_floor():
 		get_parent().change_state("Idle")
+		player.jump_count = 0
+		return
+	
+	if Input.is_action_just_pressed("jump") and player.double_jump and player.jump_count < 2:
+		get_parent().change_state("Jump")
 		return
 	
 	var direction = Input.get_axis("move_left", "move_right")
@@ -18,6 +23,7 @@ func physics_update(delta):
 		player.velocity.y += player.gravity * delta
 	
 	player.velocity.x = direction * player.speed * delta
+	
 	
 	player.move_and_slide()
 

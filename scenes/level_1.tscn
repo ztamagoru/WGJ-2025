@@ -1,20 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://2f3e8hb0fu8h"]
+[gd_scene load_steps=5 format=3 uid="uid://2f3e8hb0fu8h"]
 
 [ext_resource type="PackedScene" uid="uid://bbcy06von2tie" path="res://scripts/characters/player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://blx2r4shu52ff" path="res://assets/icon.svg" id="2_bswci"]
-[ext_resource type="Script" uid="uid://bi537hfffyagc" path="res://scenes/components/boxes/box.gd" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://can5pqsqkod3s" path="res://scenes/components/boxes/box.tscn" id="3_rus8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rus8k"]
 size = Vector2(1210, 64)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bswci"]
-friction = 0.2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xbjy"]
-size = Vector2(128, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nkto"]
-size = Vector2(154, 124)
 
 [node name="level1" type="Node2D"]
 
@@ -32,24 +23,5 @@ texture = ExtResource("2_bswci")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_rus8k")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("player_detection")]
+[node name="RigidBody2D" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(674, 419)
-mass = 0.001
-physics_material_override = SubResource("PhysicsMaterial_bswci")
-script = ExtResource("3_rus8k")
-push_speed = 10000.0
-player_detection = NodePath("DetectPush")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("2_bswci")
-flip_v = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_5xbjy")
-
-[node name="DetectPush" type="Area2D" parent="RigidBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/DetectPush"]
-shape = SubResource("RectangleShape2D_4nkto")
-debug_color = Color(0.712229, 0.458186, 0.436189, 0.42)

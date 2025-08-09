@@ -8,8 +8,12 @@ extends CharacterBody2D
 
 @export var camera : Camera2D
 
+var double_jump : bool = true
+var jump_count : int
+
 func _ready():
 	#Globals.player = self
+	jump_count = 0
 	
 	await get_tree().process_frame
 	
@@ -22,3 +26,6 @@ func _physics_process(_delta):
 		
 		#de momento cierra el juego,
 		#pero luego podría abrirse un menu de pausa
+
+func initialize_player():
+	jump_count = 0
