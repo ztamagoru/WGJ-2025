@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbcy06von2tie"]
+
+[ext_resource type="Script" uid="uid://bj3ea3tjbpsi8" path="res://scripts/characters/player.gd" id="1_sq38a"]
+[ext_resource type="Script" uid="uid://dqve1nq2whx8g" path="res://scripts/FSM/state_machine.gd" id="2_pm1ca"]
+[ext_resource type="Script" uid="uid://bahwtttwj4jga" path="res://scripts/characters/states/idle.gd" id="3_w2vvj"]
+[ext_resource type="Script" uid="uid://10uwhhnnvlx3" path="res://scripts/characters/states/running.gd" id="4_a55ao"]
+[ext_resource type="Script" uid="uid://d2appqssteo6o" path="res://scripts/characters/states/jump.gd" id="5_f85gi"]
+[ext_resource type="Script" uid="uid://dgrv7v1vnrwb" path="res://scripts/characters/states/falling.gd" id="6_4g0yp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15mv3"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_sq38a")
+speed = 20000.0
+gravity = 1000.0
+jump_force = 1000.0
+camera = NodePath("Camera2D")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_15mv3")
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("2_pm1ca")
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+script = ExtResource("3_w2vvj")
+
+[node name="Running" type="Node2D" parent="StateMachine"]
+script = ExtResource("4_a55ao")
+
+[node name="Jump" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_f85gi")
+
+[node name="Falling" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_4g0yp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
