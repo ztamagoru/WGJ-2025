@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://can5pqsqkod3s"]
+
+[ext_resource type="Script" uid="uid://bi537hfffyagc" path="res://scenes/components/boxes/box.gd" id="1_qr0e2"]
+[ext_resource type="Texture2D" uid="uid://blx2r4shu52ff" path="res://assets/icon.svg" id="2_5kadd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bswci"]
+friction = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xbjy"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nkto"]
+size = Vector2(154, 124)
+
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("player_detection")]
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_bswci")
+script = ExtResource("1_qr0e2")
+push_speed = 10000.0
+player_detection = NodePath("DetectPush")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5kadd")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5xbjy")
+
+[node name="DetectPush" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPush"]
+shape = SubResource("RectangleShape2D_4nkto")
+debug_color = Color(0.712229, 0.458186, 0.436189, 0.42)
