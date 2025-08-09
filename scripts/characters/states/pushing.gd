@@ -25,7 +25,7 @@ func physics_update(delta):
 		
 		if collision.get_collider() is RigidBody2D:
 			is_pushing = true
-			#collision.get_collider().apply_central_impulse(Vector2(player.velocity.x, 0) * 2)
+			break
 	
 	if not is_pushing:
 		get_parent().change_state("Running")
