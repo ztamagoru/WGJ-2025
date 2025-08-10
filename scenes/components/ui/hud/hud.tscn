@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn34xahgegv47"]
+
+[ext_resource type="Script" uid="uid://c7foiblumljdm" path="res://scenes/components/ui/hud/hud.gd" id="1_osc62"]
+[ext_resource type="Texture2D" uid="uid://blx2r4shu52ff" path="res://assets/icon.svg" id="2_j325g"]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("potions_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osc62")
+potions_text = NodePath("MarginContainer/VBoxContainer/HBoxContainer/PotionsLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_j325g")
+
+[node name="PotionsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"

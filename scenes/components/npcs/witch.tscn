@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv1t0r6j7avyi"]
+
+[ext_resource type="Script" uid="uid://bh43wr0dtw6bj" path="res://scenes/components/npcs/witch.gd" id="1_057vi"]
+[ext_resource type="Texture2D" uid="uid://c6ao3u5q8dqre" path="res://assets/sprites/witch/Bruja_Idle-export.png" id="2_4gj6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcfvj"]
+atlas = ExtResource("2_4gj6r")
+region = Rect2(0, 0, 86, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa8r4"]
+atlas = ExtResource("2_4gj6r")
+region = Rect2(86, 0, 86, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15mv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcfvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa8r4")
+}],
+"loop": true,
+"name": &"anim_Idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3sih"]
+radius = 39.0
+height = 172.0
+
+[node name="Witch" type="CharacterBody2D" node_paths=PackedStringArray("animation")]
+script = ExtResource("1_057vi")
+animation = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_15mv3")
+animation = &"anim_Idle"
+frame_progress = 0.770185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 3)
+shape = SubResource("CapsuleShape2D_e3sih")
+disabled = true

@@ -12,7 +12,7 @@ var double_jump : bool = true
 var jump_count : int
 
 func _ready():
-	#Globals.player = self
+	Globals.player = self
 	jump_count = 0
 	
 	await get_tree().process_frame
@@ -20,7 +20,7 @@ func _ready():
 	#no sé  si va a tener stats que se vayan a cargar
 	#a la hora de iniciar de vuelta la partida
 
-func _physics_process(_delta):
+func _process(_delta):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
 		
