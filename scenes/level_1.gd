@@ -1,6 +1,10 @@
 extends Node2D
 
 func _ready():
+	Globals.witch_text_state = "witch1"
+	
+	Globals.player.camera.offset = Vector2(0.0,-100.0)
+	
 	Globals.player.camera.limit_top = 0
 	Globals.player.camera.limit_bottom = 1080
 	Globals.player.camera.limit_left = 0

@@ -1,8 +1,12 @@
 extends Area2D
 
-@export var text_key : String
+#@export 
+var text_key : String
 
 var area_active = false
+
+func _process(_delta):
+	text_key = Globals.witch_text_state
 
 func _input(event):
 	if area_active and event.is_action_pressed("dialog"):

@@ -1,10 +1,12 @@
 {
-	"witch": [
-		"dialogo de prueba",
-		"que lindo dia hoy"
+	"witch1": [
+		"LadyTodo te mostrará tu verdadera forma, sólo si me traes las 8 pociones secretas...",
+		"... Si sobrevives... Pequeño Slime...",
+		"MUAJAJAJAJAJAJAJAJAJAJA"
 	],
-	"npc": [
-		"dadsa",
-		"dsahdja"
+	"witch2": [
+		"Felicitaciones, pequeña sustancia gelatinosa.",
+		"Con estas pociones te mostraré tu verdadera forma:",
+		"Aviso Legal: Lady Todo se reserva el derecho de admisión. NO SE ADMITEN DEVOLUCIONES",
 	]
 }
