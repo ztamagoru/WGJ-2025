@@ -23,9 +23,9 @@ func _process(_delta):
 
 func sprite_flip():
 	if velocity.x < 0:
-		animation.flip_h = true
-	elif velocity.x > 0:
 		animation.flip_h = false
+	elif velocity.x > 0:
+		animation.flip_h = true
 
 func die():
 	queue_free()

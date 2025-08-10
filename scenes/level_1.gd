@@ -5,8 +5,8 @@ func _ready():
 	
 	Globals.player.camera.offset = Vector2(0.0,-100.0)
 	
-	Globals.player.camera.limit_top = 0
-	Globals.player.camera.limit_bottom = 1080
+	Globals.player.camera.limit_top = 100
+	Globals.player.camera.limit_bottom = 1180
 	Globals.player.camera.limit_left = 0
 	Globals.player.camera.limit_right = 1920
 	

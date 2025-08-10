@@ -1,6 +1,5 @@
 extends Area2D
 
-#@export 
 var text_key : String
 
 var area_active = false

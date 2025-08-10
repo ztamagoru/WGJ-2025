@@ -12,7 +12,7 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nkto"]
 size = Vector2(154, 124)
 
-[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("player_detection")]
+[node name="MoveableBox" type="RigidBody2D" node_paths=PackedStringArray("player_detection")]
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_bswci")
 script = ExtResource("1_qr0e2")

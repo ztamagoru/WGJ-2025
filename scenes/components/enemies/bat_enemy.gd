@@ -34,5 +34,5 @@ func movement(delta):
 func _on_timer_timeout() -> void:
 	for body in hitbox.get_overlapping_bodies():
 		if body.is_in_group("player"):
-			body.take_damage(10)
+			#body.take_damage(10)
 			print("damage")
