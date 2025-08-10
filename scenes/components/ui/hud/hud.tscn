@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn34xahgegv47"]
+[gd_scene load_steps=4 format=3 uid="uid://bn34xahgegv47"]
 
 [ext_resource type="Script" uid="uid://c7foiblumljdm" path="res://scenes/components/ui/hud/hud.gd" id="1_osc62"]
 [ext_resource type="Texture2D" uid="uid://blx2r4shu52ff" path="res://assets/icon.svg" id="2_j325g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_osc62"]
+font_size = 20
 
 [node name="HUD" type="Control" node_paths=PackedStringArray("potions_text")]
 layout_mode = 3
@@ -44,3 +47,4 @@ expand_mode = 3
 [node name="PotionsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "100"
+label_settings = SubResource("LabelSettings_osc62")
