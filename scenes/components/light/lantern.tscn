@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy0id0etj8ujb"]
+
+[ext_resource type="Script" uid="uid://bt7um0ffye0fy" path="res://scenes/components/light/lantern.gd" id="1_wwhhn"]
+[ext_resource type="Texture2D" uid="uid://wwr420jkddex" path="res://assets/sprites/light.png" id="2_1ttnj"]
+[ext_resource type="Texture2D" uid="uid://2u5td42arn54" path="res://assets/textures/light.png" id="3_mug5o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gny6"]
+atlas = ExtResource("2_1ttnj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aecg"]
+atlas = ExtResource("2_1ttnj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dial"]
+atlas = ExtResource("2_1ttnj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nomh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gny6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aecg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dial")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aecg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Lantern" type="Node2D" node_paths=PackedStringArray("animation")]
+script = ExtResource("1_wwhhn")
+animation = NodePath("AnimatedSprite2D")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_7nomh")
+frame = 3
+frame_progress = 0.827458
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Light"]
+color = Color(0.887785, 0.636483, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_mug5o")
+texture_scale = 0.7
+
+[node name="PointLight2D3" type="PointLight2D" parent="Light"]
+color = Color(0.887785, 0.636483, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_mug5o")
+texture_scale = 0.5
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light"]
+color = Color(0.887785, 0.636483, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_mug5o")

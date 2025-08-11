@@ -60,6 +60,7 @@ size = Vector2(32, 32)
 size = Vector2(42, 42)
 
 [node name="BatEnemy" type="CharacterBody2D" node_paths=PackedStringArray("hitbox", "timer", "animation")]
+z_index = 1
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_h1y8h")
 hitbox = NodePath("Hitbox")

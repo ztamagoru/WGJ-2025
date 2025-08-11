@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2f3e8hb0fu8h"]
+[gd_scene load_steps=17 format=4 uid="uid://2f3e8hb0fu8h"]
 
 [ext_resource type="Script" uid="uid://d20onjrxe27up" path="res://scenes/level_1.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bbcy06von2tie" path="res://scripts/characters/player.tscn" id="1_014kd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4mwf7l0md26w" path="res://scenes/components/ui/dialogs/dialog_player.tscn" id="6_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://nf5jykmdbnqq" path="res://scenes/components/enemies/bat_enemy.tscn" id="8_15mv3"]
 [ext_resource type="PackedScene" uid="uid://4ghv47xwkshe" path="res://scenes/components/common/fall_zone.tscn" id="9_e3sih"]
+[ext_resource type="PackedScene" uid="uid://dy0id0etj8ujb" path="res://scenes/components/light/lantern.tscn" id="10_2y5yt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8r4"]
 size = Vector2(144, 77)
@@ -61,7 +62,7 @@ fallzone = NodePath("FallZone")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_014kd")]
 z_index = 1
-position = Vector2(251, 194)
+position = Vector2(314, -167)
 
 [node name="MoveableBox" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(780, 658)
@@ -129,6 +130,38 @@ position = Vector2(96, 316)
 position = Vector2(784, 1151)
 shape = SubResource("RectangleShape2D_2y5yt")
 debug_color = Color(0.635411, 0.525288, 0.117441, 0.42)
+
+[node name="LightSystem" type="Node2D" parent="."]
+
+[node name="Lantern" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(360, 191)
+
+[node name="Lantern2" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(629, 191)
+
+[node name="Lantern3" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(878, 191)
+
+[node name="Lantern4" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(834, 539)
+
+[node name="Lantern5" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(201, 539)
+
+[node name="Lantern6" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(125, 929)
+
+[node name="Lantern7" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(591, 929)
+
+[node name="Lantern8" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(1454, 938)
+
+[node name="Lantern9" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(1797, 938)
+
+[node name="Lantern10" parent="LightSystem" instance=ExtResource("10_2y5yt")]
+position = Vector2(1733, 312)
 
 [editable path="DialogAreaWitch"]
 [editable path="FallZone"]
