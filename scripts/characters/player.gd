@@ -27,5 +27,9 @@ func _process(_delta):
 		#de momento cierra el juego,
 		#pero luego podría abrirse un menu de pausa
 
+func _physics_process(_delta):
+	if is_on_floor():
+		get_tree().current_scene.update_safe_position(global_position)
+
 func initialize_player():
 	jump_count = 0
