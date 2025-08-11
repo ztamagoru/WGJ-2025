@@ -50,18 +50,18 @@ frame_progress = 0.827458
 [node name="Light" type="Node2D" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="Light"]
-color = Color(0.887785, 0.636483, 0, 1)
+color = Color(0.886275, 0.635294, 0, 0.784314)
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_mug5o")
 texture_scale = 0.7
 
 [node name="PointLight2D3" type="PointLight2D" parent="Light"]
-color = Color(0.887785, 0.636483, 0, 1)
+color = Color(0.886275, 0.635294, 0, 0.784314)
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_mug5o")
 texture_scale = 0.5
 
 [node name="PointLight2D2" type="PointLight2D" parent="Light"]
-color = Color(0.887785, 0.636483, 0, 1)
+color = Color(0.886275, 0.635294, 0, 0.784314)
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_mug5o")
