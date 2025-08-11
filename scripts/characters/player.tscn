@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bbcy06von2tie"]
+[gd_scene load_steps=43 format=3 uid="uid://bbcy06von2tie"]
 
 [ext_resource type="Script" uid="uid://bj3ea3tjbpsi8" path="res://scripts/characters/player.gd" id="1_sq38a"]
 [ext_resource type="Texture2D" uid="uid://bgcr42r821nvt" path="res://assets/sprites/player/Slime_jump WGJ.png" id="2_a55ao"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://do0wyqcodefc0" path="res://assets/sprites/player/Slime_walk_R WGJ.png" id="5_ktf6h"]
 [ext_resource type="Script" uid="uid://dgrv7v1vnrwb" path="res://scripts/characters/states/falling.gd" id="6_4g0yp"]
 [ext_resource type="Script" uid="uid://bhqggj41bqwsp" path="res://scripts/characters/states/pushing.gd" id="8_w2vvj"]
+[ext_resource type="Script" uid="uid://dasaoe5b75kvq" path="res://scripts/characters/player_camera.gd" id="12_5p46t"]
 [ext_resource type="PackedScene" uid="uid://bn34xahgegv47" path="res://scenes/components/ui/hud/hud.tscn" id="12_ktf6h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4g0yp"]
@@ -306,6 +307,7 @@ script = ExtResource("6_4g0yp")
 script = ExtResource("8_w2vvj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("12_5p46t")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
