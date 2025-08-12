@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrvmpa0euoh8"]
+
+[ext_resource type="Texture2D" uid="uid://dfmxgxwwvgkqs" path="res://assets/sprites/ui/Key_E.png" id="1_aljap"]
+[ext_resource type="Script" uid="uid://dac6ci07w758w" path="res://scenes/components/common/key_e_sprite.gd" id="2_g21xi"]
+
+[node name="KeyESprite" type="Sprite2D"]
+z_index = 2
+texture = ExtResource("1_aljap")
+script = ExtResource("2_g21xi")

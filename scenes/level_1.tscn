@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://2f3e8hb0fu8h"]
+[gd_scene load_steps=20 format=4 uid="uid://2f3e8hb0fu8h"]
 
 [ext_resource type="Script" uid="uid://d20onjrxe27up" path="res://scenes/level_1.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bbcy06von2tie" path="res://scripts/characters/player.tscn" id="1_014kd"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://nf5jykmdbnqq" path="res://scenes/components/enemies/bat_enemy.tscn" id="8_15mv3"]
 [ext_resource type="PackedScene" uid="uid://4ghv47xwkshe" path="res://scenes/components/common/fall_zone.tscn" id="9_e3sih"]
 [ext_resource type="PackedScene" uid="uid://dy0id0etj8ujb" path="res://scenes/components/light/lantern.tscn" id="10_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://bu40e0amsaovd" path="res://scenes/components/ui/hud/controls_movement.tscn" id="11_2os1m"]
+[ext_resource type="Script" uid="uid://dwdklbecs3wh5" path="res://scenes/components/common/tutorial_area_lookdown.gd" id="12_go7sj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8r4"]
 size = Vector2(144, 77)
@@ -54,6 +56,9 @@ sources/2 = SubResource("TileSetAtlasSource_15mv3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y5yt"]
 size = Vector2(1268, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ohfx"]
+size = Vector2(96, 319)
 
 [node name="level1" type="Node2D" node_paths=PackedStringArray("start_position", "fallzone")]
 script = ExtResource("1_5xbjy")
@@ -162,6 +167,18 @@ position = Vector2(1797, 938)
 
 [node name="Lantern10" parent="LightSystem" instance=ExtResource("10_2y5yt")]
 position = Vector2(1733, 312)
+
+[node name="ControlsMovement" parent="." instance=ExtResource("11_2os1m")]
+
+[node name="TutorialArea2D" type="Area2D" parent="."]
+position = Vector2(806, 320)
+script = ExtResource("12_go7sj")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialArea2D"]
+position = Vector2(18, -128)
+shape = SubResource("RectangleShape2D_7ohfx")
+debug_color = Color(0.72269, 0.352406, 0.820459, 0.42)
 
 [editable path="DialogAreaWitch"]
 [editable path="FallZone"]

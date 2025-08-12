@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddvumv3vydv81"]
+
+[ext_resource type="Script" uid="uid://dwdklbecs3wh5" path="res://scenes/components/common/tutorial_area_lookdown.gd" id="1_u0170"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ohfx"]
+size = Vector2(96, 319)
+
+[node name="TutorialArea2D" type="Area2D"]
+script = ExtResource("1_u0170")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, -128)
+shape = SubResource("RectangleShape2D_7ohfx")
+debug_color = Color(0.72269, 0.352406, 0.820459, 0.42)
